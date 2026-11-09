@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Estilos implícitos -->
+    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{StaticResource Fundo}" />
+    </Style>
+
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primaria}" />
+        <Setter Property="Shell.ForegroundColor" Value="White" />
+        <Setter Property="Shell.TitleColor" Value="White" />
+    </Style>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Primaria}" />
+        <Setter Property="BarTextColor" Value="White" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextoEscuro}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{StaticResource TextoEscuro}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource CinzaTexto}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="DatePicker">
+        <Setter Property="TextColor" Value="{StaticResource TextoEscuro}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource Primaria}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HeightRequest" Value="48" />
+    </Style>
+
+    <!-- Estilos nomeados -->
+    <Style x:Key="BotaoSecundario" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimariaClara}" />
+        <Setter Property="TextColor" Value="{StaticResource Primaria}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HeightRequest" Value="48" />
+    </Style>
+
+    <Style x:Key="Titulo" TargetType="Label">
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource Primaria}" />
+    </Style>
+
+    <Style x:Key="Subtitulo" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource CinzaTexto}" />
+    </Style>
+
+    <Style x:Key="Rotulo" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource CinzaTexto}" />
+    </Style>
+
+    <Style x:Key="CampoBorda" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Stroke" Value="{StaticResource CinzaBorda}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="10,2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 10" />
+    </Style>
+
+    <Style x:Key="Cartao" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Stroke" Value="{StaticResource CinzaBorda}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 14" />
+    </Style>
+
+</ResourceDictionary>

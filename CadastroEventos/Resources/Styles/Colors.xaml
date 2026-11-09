@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primaria">#512BD4</Color>
+    <Color x:Key="PrimariaClara">#EDE7FF</Color>
+    <Color x:Key="Fundo">#F7F7FB</Color>
+    <Color x:Key="CinzaTexto">#6B6B80</Color>
+    <Color x:Key="CinzaBorda">#D6D6E0</Color>
+    <Color x:Key="TextoEscuro">#1F1F2E</Color>
+
+</ResourceDictionary>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:CadastroEventos.Models"
+             x:Class="CadastroEventos.Views.ResumoEventoPage"
+             x:DataType="models:Evento"
+             Title="Resumo do Evento">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14" MaximumWidthRequest="600">
+
+            <Label Text="✅ Evento cadastrado!" Style="{StaticResource Titulo}" />
+
+            <!-- Nome e local -->
+            <Border Style="{StaticResource Cartao}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Evento" Style="{StaticResource Rotulo}" />
+                    <Label Text="{Binding Nome}" FontSize="22" FontAttributes="Bold" />
+                    <Label Text="{Binding Local, StringFormat='📍 {0}'}" TextColor="{StaticResource CinzaTexto}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Período -->
+            <Border Style="{StaticResource Cartao}">
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+                    <Label Grid.ColumnSpan="2" Text="Período" Style="{StaticResource Rotulo}" />
+
+                    <Label Grid.Row="1" Text="Início:" FontAttributes="Bold" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataInicioFormatada}" />
+
+                    <Label Grid.Row="2" Text="Término:" FontAttributes="Bold" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding DataTerminoFormatada}" />
+
+                    <Label Grid.Row="3" Text="Duração:" FontAttributes="Bold" />
+                    <VerticalStackLayout Grid.Row="3" Grid.Column="1">
+                        <Label Text="{Binding DuracaoFormatada}" />
+                        <Label Text="{Binding DiferencaTimeSpanFormatada}" FontSize="12" TextColor="{StaticResource CinzaTexto}" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <!-- Custos -->
+            <Border Style="{StaticResource Cartao}">
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+                    <Label Grid.ColumnSpan="2" Text="Participantes e custos" Style="{StaticResource Rotulo}" />
+
+                    <Label Grid.Row="1" Text="Participantes:" FontAttributes="Bold" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding NumeroParticipantesFormatado}" />
+
+                    <Label Grid.Row="2" Text="Custo por pessoa:" FontAttributes="Bold" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding CustoPorParticipanteFormatado}" />
+                </Grid>
+            </Border>
+
+            <!-- Custo total em destaque -->
+            <Border BackgroundColor="{StaticResource Primaria}" StrokeThickness="0" Padding="20">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="14" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label Text="CUSTO TOTAL DO EVENTO" TextColor="White" FontSize="13" HorizontalOptions="Center" />
+                    <Label Text="{Binding CustoTotalFormatado}" TextColor="White" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Voltar ao cadastro" Clicked="OnVoltarClicked" Margin="0,10,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

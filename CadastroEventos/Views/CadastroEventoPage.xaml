@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:CadastroEventos.Models"
+             xmlns:conv="clr-namespace:CadastroEventos.Converters"
+             x:Class="CadastroEventos.Views.CadastroEventoPage"
+             x:DataType="models:Evento"
+             Title="Cadastro de Evento">
+
+    <ContentPage.Resources>
+        <conv:TextoParaNumeroConverter x:Key="TextoParaNumero" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14" MaximumWidthRequest="600">
+
+            <Label Text="📅 Novo Evento" Style="{StaticResource Titulo}" />
+            <Label Text="Preencha os dados básicos do evento." Style="{StaticResource Subtitulo}" />
+
+            <!-- Nome do evento -->
+            <Label Text="Nome do evento" Style="{StaticResource Rotulo}" />
+            <Border Style="{StaticResource CampoBorda}">
+                <Entry x:Name="EntryNome"
+                       Placeholder="Ex.: Semana da Tecnologia"
+                       Text="{Binding Nome}" />
+            </Border>
+
+            <!-- Datas -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <VerticalStackLayout Grid.Column="0" Spacing="6">
+                    <Label Text="Data de início" Style="{StaticResource Rotulo}" />
+                    <Border Style="{StaticResource CampoBorda}">
+                        <DatePicker Format="dd/MM/yyyy"
+                                    Date="{Binding DataInicio}" />
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="6">
+                    <Label Text="Data de término" Style="{StaticResource Rotulo}" />
+                    <Border Style="{StaticResource CampoBorda}">
+                        <DatePicker Format="dd/MM/yyyy"
+                                    MinimumDate="{Binding DataInicio}"
+                                    Date="{Binding DataTermino}" />
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Número de participantes -->
+            <Label Text="Número de participantes" Style="{StaticResource Rotulo}" />
+            <Border Style="{StaticResource CampoBorda}">
+                <Entry x:Name="EntryParticipantes"
+                       Placeholder="Ex.: 150"
+                       Keyboard="Numeric"
+                       Text="{Binding NumeroParticipantes, Mode=OneWayToSource, Converter={StaticResource TextoParaNumero}}" />
+            </Border>
+
+            <!-- Local -->
+            <Label Text="Local do evento" Style="{StaticResource Rotulo}" />
+            <Border Style="{StaticResource CampoBorda}">
+                <Entry x:Name="EntryLocal"
+                       Placeholder="Ex.: Centro de Convenções"
+                       Text="{Binding Local}" />
+            </Border>
+
+            <!-- Custo por participante -->
+            <Label Text="Custo por participante (R$)" Style="{StaticResource Rotulo}" />
+            <Border Style="{StaticResource CampoBorda}">
+                <Entry x:Name="EntryCusto"
+                       Placeholder="Ex.: 89,90"
+                       Keyboard="Numeric"
+                       Text="{Binding CustoPorParticipante, Mode=OneWayToSource, Converter={StaticResource TextoParaNumero}}" />
+            </Border>
+
+            <!-- Prévia dos cálculos (atualizada em tempo real pelo Binding) -->
+            <Border Style="{StaticResource Cartao}" Margin="0,8,0,0">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Prévia dos cálculos" FontAttributes="Bold" TextColor="{StaticResource Primaria}" />
+                    <Label Text="{Binding DuracaoFormatada, StringFormat='Duração: {0}'}" />
+                    <Label Text="{Binding DiferencaTimeSpanFormatada}" FontSize="12" TextColor="{StaticResource CinzaTexto}" />
+                    <Label Text="{Binding CustoTotalFormatado, StringFormat='Custo total: {0}'}" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Concluir cadastro"
+                    Clicked="OnConcluirClicked"
+                    Margin="0,10,0,0" />
+
+            <Button Text="Limpar formulário"
+                    Clicked="OnLimparClicked"
+                    Style="{StaticResource BotaoSecundario}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

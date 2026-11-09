@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ícone de calendário -->
+    <rect x="128" y="148" width="200" height="180" rx="20" fill="#FFFFFF" />
+    <rect x="128" y="148" width="200" height="50" rx="20" fill="#D6CCFF" />
+    <rect x="168" y="128" width="16" height="44" rx="8" fill="#FFFFFF" />
+    <rect x="272" y="128" width="16" height="44" rx="8" fill="#FFFFFF" />
+    <rect x="160" y="220" width="36" height="30" rx="6" fill="#512BD4" />
+    <rect x="210" y="220" width="36" height="30" rx="6" fill="#512BD4" />
+    <rect x="260" y="220" width="36" height="30" rx="6" fill="#512BD4" />
+    <rect x="160" y="268" width="36" height="30" rx="6" fill="#512BD4" />
+    <rect x="210" y="268" width="36" height="30" rx="6" fill="#512BD4" />
+</svg>

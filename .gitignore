@@ -1,0 +1,17 @@
+## .NET / Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.rsuser
+*.DotSettings.user
+.idea/
+.vscode/
+*.apk
+*.aab
+*.ipa
+AppPackages/
+BundleArtifacts/
+TestResults/
